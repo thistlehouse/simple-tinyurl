@@ -39,6 +39,7 @@ public class ShortenedUrlRepository
     {
         await _entityCollection.ReplaceOneAsync(
             url => url.Id == shortenedUrl.Id,
-            shortenedUrl);
+            shortenedUrl,
+            cancellationToken: cancellationToken);
     }
 }
